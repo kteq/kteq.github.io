@@ -12,7 +12,7 @@
   <link href="kteq.css" rel="stylesheet">
 
 </head>
-<body id="topPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+<body id="kteqHome" data-spy="scroll" data-target=".navbar" data-offset="50">
 
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
@@ -26,13 +26,26 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
+        <li><a href="#kteqHome">HOME</a></li>
         <li><a href="#kteq">KTEQ</a></li>
         <li><a href="#stream">STREAM</a></li>
         <li><a href="#schedule">SCHEDULE</a></li>
         <li><a href="#donate">DONATE</a></li>
         <li><a href="#contact">CONTACT</a></li>
-        <li id="moreDropdown" class="dropdown">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="programs.html">Current Programs</a></li>
+            <li><a href="events.html">Upcoming Events</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="forms.html">Forms and Documentation</a></li>            
+            <li><a href="management.html">Management</a></li>
+            <li><a target="_blank" href="https://sdsmt.collegiatelink.net/organization/kteq">KTEQ Mines Link Page</a></li>
+          </ul>
         </li>
+        <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
       </ul>
     </div>
   </div>
@@ -162,22 +175,100 @@
 
 <!-- Container (Contact Section) -->
 <div id="contact" class="container">
+  <h3 class="text-center">Contact</h3>
+
+  <div class="row">
+    <div style="float: left;" class="col-md-4">
+      <p><span class="glyphicon glyphicon-phone"></span> Phone: 6053946667</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> Email: <a href="mailto:kteq@mines.sdsmt.edu" target="_top">kteq@mines.sdsmt.edu</a></p>
+      <p><a target="_blank" href="http://tunein.com/radio/KTEQ-FM-913-s144657/">TuneIn</a></p>
+    </div>
+    <div style="float: right;" class="col-md-4">
+      <p><a target="_blank" href="https://www.facebook.com/kteqfm">Facebook</a></p>
+      <p><a target="_blank" href="https://twitter.com/kteq_fm">Twitter</a></p>
+      <p><a target="_blank" href="https://www.instagram.com/kteq91.3/?hl=en">Instagram</a></p>
+    </div>
+  </div>
+
 </div>
-<script src="scripts/contact.js"></script>
 
-<!-- MORE Tab -->
-<script src="scripts/more.js"></script>
 
-<!-- Google MAP -->
+<?php include("footer.html");?>
+
 <div id="googleMap"></div>
-<script src="scripts/map.js"></script>
+
+<!-- Add Google Maps -->
 <script src="http://maps.googleapis.com/maps/api/js"></script>
+<script>
+var myCenter = new google.maps.LatLng(44.088138, -103.249492);
+var surbeck = new google.maps.LatLng(44.075854, -103.208377);
 
-<!-- FOOTER -->
-<footer id="foot01"></footer>
-<script src="scripts/footer.js"></script>
+function initialize() {
+var mapProp = {
+center:myCenter,
+zoom:12,
+scrollwheel:false,
+draggable:false,
+mapTypeId:google.maps.MapTypeId.ROADMAP
+};
 
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
+var marker = new google.maps.Marker({
+position:myCenter,
+label:"KTEQ Radio Broadcast"
+});
+
+var surbMarker = new google.maps.Marker({
+position:surbeck,
+label:"KTEQ Studio"
+});
+
+marker.setMap(map);
+
+surbMarker.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<!-- Footer -->
+<footer class="text-center">
+  <a class="up-arrow" href="#kteqHome" data-toggle="tooltip" title="TO TOP">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a><br><br>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Initialize Tooltip
+  $('[data-toggle="tooltip"]').tooltip();
+  
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#kteqHome']").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+</script>
 
 </body>
 </html>
