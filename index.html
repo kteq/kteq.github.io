@@ -10,7 +10,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link href="kteq.css" rel="stylesheet">
-
+  <link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 2230px)" href="kteqmobile.css" />
 </head>
 <body id="topPage" data-spy="scroll" data-target=".navbar" data-offset="50">
 
@@ -26,6 +26,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
+        <li><a href="#grubstock">GRUBSTOCK</a></li>
         <li><a href="#kteq">KTEQ</a></li>
         <li><a href="#stream">STREAM</a></li>
         <li><a href="#schedule">SCHEDULE</a></li>
@@ -38,11 +39,29 @@
   </div>
 </nav>
 
+<!-- Quick and dirty Grubstock Page
 <center>
   <img src="img/kteq_logo.jpg" alt="KTEQ" width=auto height=auto>
 </center>
+-->
+<br><br>
+<center>
+  <img src="img/kteq_grubstock_full.jpg" alt="KTEQ" width=850 height=auto>
+</center>
 
+<!-- Container (STREAM Section) -->
+<div id="grubstock" class="bg-1">
+  <div class="container">
+    <h3 class="text-center">GRUBSTOCK 2016</h3>
 
+    <p class="text-center">This week, KTEQ is holding its first event of the semester, Grubstock, at the SDSM&T Rocker Days Fair! 
+    This is a full day event featuring various local musicians spanning a broad range of musical genres! The event will be held at 
+    the O'Harra Stadium Parking Lot on Saturday, October 1st, 2016.
+    More info can be found on the event's <a target="_blank" href="http://www.artsrapidcity.org/event/grubstock-at-rocker-days-fair/">Arts Rapid City page</a>. We hope to see you there!!
+  </p>
+
+  </div>
+</div>
 
 <!-- Container (KTEQ Section) -->
 <div id="kteq" class="container text-center">
@@ -84,7 +103,7 @@
     <h3 class="text-center">KTEQ LIVE SHOW SCHEDULE</h3>
     <p class="text-center">Please <a href="#contact">contact us</a> if you are interested in having your very own KTEQ show!</p>
     <center>
-      <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;mode=WEEK&amp;height=1110&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=kteq%40mines.sdsmt.edu&amp;color=%23333333&amp;ctz=America%2FDenver" style=" border-width:0 " width="800" height="1110" frameborder="0" scrolling="no"> 
+      <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;mode=WEEK&amp;height=1110&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=kteq%40mines.sdsmt.edu&amp;color=%23333333&amp;ctz=America%2FDenver" style=" border-width:0 " width="500" height="1110" frameborder="0" scrolling="no"> 
       </iframe>
     </center>
   </div>
@@ -171,7 +190,9 @@
 <!-- Google MAP -->
 <div id="googleMap"></div>
 <script src="scripts/map.js"></script>
-<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDM0iNjMBB3jd1md_4_5_Kwc4NFU5zt-LU">
+</script>
 
 <!-- FOOTER -->
 <footer id="foot01"></footer>
