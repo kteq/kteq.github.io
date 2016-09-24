@@ -8,19 +8,9 @@ body {
   }
 
   iframe {
-    zoom: 0.90;
+        max-width: 100%;
 
-    -moz-transform: scale(0.71);
 
-    -moz-transform-origin: 0 0;
-
-    -o-transform: scale(0.71);
-
-    -o-transform-origin: 0 0;
-
-    -webkit-transform: scale(0.71);
-
-    -webkit-transform-origin: 0 0;
   }
   div {
     max-width: 100%;
@@ -76,7 +66,7 @@ body {
     }
   }
   .bg-1 {
-    
+
       background: #2d2d30;
       color: #bdbdbd;
   }
